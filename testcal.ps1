@@ -1,5 +1,5 @@
 $User = $env:userid
-$PWord = ConvertTo-SecureString -String $env:password -AsPlainText -Force
+$PWord = $env:password
 $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
 
 

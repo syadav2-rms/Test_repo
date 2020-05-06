@@ -1,8 +1,8 @@
-$PWord = $env:password
-$pass = ConvertTo-SecureString -AsPlainText $PWord -Force
-$SecureString = $pass
+#$PWord = $env:password
+#$pass = ConvertTo-SecureString -AsPlainText $PWord -Force
+#$SecureString = $pass
 
-$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $env:userid,$SecureString
+$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $env:userid,$env:password
 
 
 $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $Credential -Authentication Basic -AllowRedirection
